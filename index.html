@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Health DataStory: Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="active">Overview</a>
+  <a href="story.html">The Data Story</a>
+  <a href="dashboards.html">Dashboards &amp; Insights</a>
+</nav>
+<main>
+  <div class="kicker">17:610:554 | Information Visualization &amp; Presentation | Term Project</div>
+  <h1>What Actually Explains Life Expectancy</h1>
+  <p style="font-size:1.15em; color:var(--muted);">A Data Story Project built on a global health dataset covering 215 countries and territories from 2000 to 2023.</p>
+
+  <h2>The question</h2>
+  <p>Life expectancy is the number news stories use to sum up a country's health, but it's really the output of a bunch of quieter variables: healthcare spending, doctors per capita, national wealth, how common chronic disease and tobacco use are. I wanted to know which of those actually move the number and which ones just show up correlated with it because everything correlates with wealth eventually.</p>
+
+  <h2>The dataset</h2>
+  <p>Eleven independent variables in total, plus life expectancy as the outcome I'm testing them against: GDP per capita, health expenditure as a percent of GDP, physicians per 1,000 people, diabetes prevalence, tobacco use, and population, plus urban population share, internet use, unemployment, electricity access, and population density. All joined by country, covering 215 countries and territories. The first six come from a dataset I'd already worked with and span 2000 to 2023. The last five are new to this analysis, pulled from the <a href="https://data.worldbank.org">World Bank's World Development Indicators</a>, and use the most recent year available per country instead, since full year-by-year coverage isn't available for every country on those five.</p>
+  <p><a href="https://drive.google.com/file/d/1RW-ysTmq7Derj_lxLJCMnAwtrgJGqMHN/view?usp=sharing">Tableau Workbook</a></p>
+
+  <h2>Approach taken</h2>
+  <p>I started with the map. It was recolored from a single-hue blue scale to an orange-blue diverging palette with a custom midpoint at 70 years, roughly the global median, so it reads as "above 70" versus "below 70" instead of just a gradient of blues. I also added Year to the map's Pages shelf, since it had been showing one blended average across all 23 years instead of animating like the motion charts already did.</p>
+  <p>From there I wanted a third motion chart testing a new relationship. Instead of guessing at a variable, I tried a few in Tableau with a trend line added to each (more on that on <a href="story.html">the story page</a>), and Physicians per 1,000 people had the clearest, tightest relationship with life expectancy, closer than health spending share ever got. That's the one I kept. Along the way, I noticed the trend lines on each motion chart were splitting into seven overlapping lines, one per region, because Tableau factors in every field on the Color shelf by default. Unchecking Region under Analysis &gt; Trend Lines &gt; Edit All Trend Lines fixed that, so each chart now shows a single line for the overall relationship.</p>
+  <p>I paired the map with each motion, bar, and line chart into two dashboards and turned on Highlight Actions for All Fields, so clicking a country or region in one view highlights it everywhere else on the same dashboard.</p>
+  <p>Beyond physicians per 1,000, I wanted to test how a handful of variables outside that original dataset relate to life expectancy: urban population share, internet use, unemployment, electricity access, and population density. Each one is tested against life expectancy on <a href="story.html">the story page</a>, and all five are linked together in a third dashboard on <a href="dashboards.html">the dashboards page</a>.</p>
+
+  <div class="footer-nav">
+    <span></span>
+    <a href="story.html">Next: The Data Story →</a>
+  </div>
+</main>
+</body>
+</html>

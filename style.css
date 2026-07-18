@@ -1,0 +1,117 @@
+:root {
+  --ink: #1f2430;
+  --muted: #5b6472;
+  --accent: #c1611d;
+  --accent2: #3b6ea5;
+  --line: #e3ddd3;
+  --paper: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  padding: 22px 8vw;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a.active, nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 50px 6vw 100px;
+}
+
+h1 {
+  font-size: 2.3em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2.4em;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9em;
+}
+
+h3 {
+  font-size: 1.15em;
+  margin-bottom: 0.3em;
+  color: var(--accent);
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.85em;
+}
+
+.kicker {
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+p { margin: 0.9em 0; }
+
+figure {
+  margin: 1.6em 0 0.4em;
+}
+
+figure img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  display: block;
+}
+
+figcaption {
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--line);
+  font-family: 'Roboto', -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+.footer-nav a { color: var(--accent2); text-decoration: none; }
+
+ul.approach-list li { margin-bottom: 0.6em; }
+
+code {
+  background: #eee7d9;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
